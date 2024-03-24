@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "postinstall": "npm rebuild bcrypt --build-from-source"
   },
   "dependencies": {
     "accesscontrol": "^2.2.1",
