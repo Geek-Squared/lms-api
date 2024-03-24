@@ -20,7 +20,6 @@ const forumRoutes = require('./routes/forumRoutes');
 const indexRouter = require('./routes/index');
 
 const app = express();
-const PORT = process.env.PORT || 32450;
 
 // db connection
 mongoose.connect('mongodb+srv://msngwelz:PgLwIc48L14gTMt2@cluster0.ohzwba6.mongodb.net/', { useNewUrlParser: true })
@@ -89,8 +88,8 @@ app.use('/submission', submissionRoutes);
 app.use('/forum', forumRoutes);
 
 // run server
-app.listen(PORT, function () {
-  console.log('Server listening on port ' + PORT);
+app.listen(process.env.PORT || 3001, '0.0.0.0', () => {
+  console.log("Server is running.");
 });
 
 // catch 404 and forward to error handler
